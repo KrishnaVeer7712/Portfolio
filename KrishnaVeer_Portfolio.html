@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #e8f5e9;
             margin: 0;
             padding: 0;
             text-align: center;
@@ -45,35 +45,39 @@
             bottom: 0;
             left: 50%;
             margin-left: -2px;
+            animation: growLine 2s ease-out forwards;
+        }
+        @keyframes growLine {
+            from { height: 0; }
+            to { height: 100%; }
         }
         .timeline-item {
-            padding: 10px;
+            padding: 15px;
             position: relative;
-            width: 50%;
-            background: white;
+            width: 40%;
+            background: #c8e6c9;
             border-radius: 6px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: left;
             margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
         }
-        .timeline-item.left {
+        .timeline-item:nth-child(odd) {
             left: 0;
+            text-align: right;
         }
-        .timeline-item.right {
+        .timeline-item:nth-child(even) {
             left: 50%;
+            text-align: left;
         }
-        .timeline-item::before {
-            content: '\25BC';
-            position: absolute;
-            top: 10px;
-            font-size: 18px;
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .timeline-item i {
+            margin-right: 5px;
             color: #4caf50;
-        }
-        .timeline-item.left::before {
-            right: -10px;
-        }
-        .timeline-item.right::before {
-            left: -10px;
         }
         .footer {
             margin-top: 20px;
@@ -89,25 +93,25 @@
         <h3>Software Developer @ IBM | Java Specialist</h3>
         
         <div class="timeline">
-            <div class="timeline-item left">
-                <strong>2022 - Present</strong> <br> M.Tech at DA-IICT (CPI: 8.59) <br>
-                <i class="fas fa-map-marker-alt"></i> Gandhinagar, Gujarat
+            <div class="timeline-item">
+                <i class="fas fa-calendar-alt"></i> <strong>2013 - 2014</strong> <br> 
+                Class X - Ragrenda Swarup Public School (ICSE) (82.4%) <br>
+                <i class="fas fa-map-marker-alt"></i> Agra, Uttar Pradesh
             </div>
-            <div class="timeline-item right">
-                <strong>2017 - 2021</strong> <br> B.Tech from Bennett University (CPI: 7.1) <br>
+            <div class="timeline-item">
+                <i class="fas fa-calendar-alt"></i> <strong>2015 - 2016</strong> <br> 
+                Class XII - Maria Residential Public School (CBSE) (76%) <br>
+                <i class="fas fa-map-marker-alt"></i> Agra, Uttar Pradesh
+            </div>
+            <div class="timeline-item">
+                <i class="fas fa-calendar-alt"></i> <strong>2017 - 2021</strong> <br> 
+                B.Tech from Bennett University (CPI: 7.1) <br>
                 <i class="fas fa-map-marker-alt"></i> Greater Noida, Uttar Pradesh
             </div>
-            <div class="timeline-item left">
-                <strong>2015 - 2016</strong> <br> Class XII - Maria Residential Public School (CBSE) (76%) <br>
-                <i class="fas fa-map-marker-alt"></i> Agra, Uttar Pradesh
-            </div>
-            <div class="timeline-item right">
-                <strong>2013 - 2014</strong> <br> Class X - Ragrenda Swarup Public School (ICSE) (82.4%) <br>
-                <i class="fas fa-map-marker-alt"></i> Agra, Uttar Pradesh
-            </div>
-            <div class="timeline-item left">
-                <strong>2024 - Present</strong> <br> Software Developer at IBM <br>
-                <i class="fas fa-map-marker-alt"></i> India
+            <div class="timeline-item">
+                <i class="fas fa-calendar-alt"></i> <strong>2022 - Present</strong> <br> 
+                M.Tech at DA-IICT (CPI: 8.59) <br>
+                <i class="fas fa-map-marker-alt"></i> Gandhinagar, Gujarat
             </div>
         </div>
     </div>
