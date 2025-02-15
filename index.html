@@ -62,14 +62,18 @@
             margin-bottom: 20px;
             opacity: 0;
             animation: fadeInUp 1s ease-out forwards;
+            cursor: pointer;
         }
         .timeline-item:nth-child(odd) {
-            left: -0.5%; /* Adjusted slightly further to the left */
+            left: -0.5%;
             text-align: right;
         }
         .timeline-item:nth-child(even) {
             left: 53%;
             text-align: left;
+        }
+        .timeline-item .details {
+            display: none;
         }
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
@@ -85,6 +89,13 @@
             color: gray;
         }
     </style>
+    <script>
+        $(document).ready(function(){
+            $(".timeline-item").click(function(){
+                $(this).find(".details").slideToggle();
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -92,6 +103,7 @@
         <h1>Krishnaveer Singh</h1>
         <h3>Software Developer @ IBM | Java Specialist</h3>
         
+        <h2>EDUCATION</h2>
         <div class="timeline">
             <div class="timeline-item">
                 <i class="fas fa-calendar-alt"></i> <strong>2013 - 2014</strong> <br> 
@@ -112,6 +124,30 @@
                 <i class="fas fa-calendar-alt"></i> <strong>2022 - Present</strong> <br> 
                 M.Tech at DA-IICT (CPI: 8.59) <br>
                 <i class="fas fa-map-marker-alt"></i> Gandhinagar, Gujarat
+            </div>
+        </div>
+
+        <h2>EXPERIENCE</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <i class="fas fa-calendar-alt"></i> <strong>IBM - Software Developer Intern</strong> (Jan 2024 - Present)
+                <div class="details">
+                    <p>• Working on OpenAPI Specifications for ELM JAF Project.<br>
+                    • Using LLMs to detect and fix Security Vulnerabilities in Code.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <i class="fas fa-calendar-alt"></i> <strong>Disecto Technologies - Python SDE</strong> (July 2022 - Mar 2023)
+                <div class="details">
+                    <p>• Developed PII detection algorithms.<br>
+                    • Used OCR and AI models for document classification.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <i class="fas fa-calendar-alt"></i> <strong>JPMorgan Chase - Software Engineering Virtual Internship</strong> (Apr 2020 - May 2020)
+                <div class="details">
+                    <p>• Worked on Data Feeds, Frontend Web Dev, and Data Visualization.</p>
+                </div>
             </div>
         </div>
     </div>
