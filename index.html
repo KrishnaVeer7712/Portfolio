@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krishnaveer Singh - Portfolio</title>
+    <title>Krishna Veer Singh - Portfolio</title> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
@@ -61,10 +61,18 @@
             left: 50%;
             margin-left: -2px;
             animation: growLine 2s ease-out forwards;
+            border-radius: 50%;
         }
-        @keyframes growLine {
-            from { height: 0; }
-            to { height: 100%; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            margin-left: -6px;
+            width: 12px;
+            height: 12px;
+            background-color: #f39c12;
+            border-radius: 50%;
         }
         .timeline-item {
             padding: 20px;
@@ -81,7 +89,7 @@
         }
         .timeline-item:nth-child(odd) {
             left: -0.5%;
-            text-align: right;
+            text-align: left;
         }
         .timeline-item:nth-child(even) {
             left: 50%;
@@ -102,12 +110,27 @@
             margin-right: 10px;
             color: #f1c40f;
         }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -6px;
+            width: 12px;
+            height: 12px;
+            background-color: #f39c12;
+            border-radius: 50%;
+        }
         .arrow {
             float: right;
             transition: transform 0.3s ease;
         }
         .expanded .arrow {
             transform: rotate(180deg);
+        }
+        @keyframes growLine {
+            from { height: 0; }
+            to { height: 100%; }
         }
         .footer {
             margin-top: 50px;
@@ -128,7 +151,7 @@
 <body>
     <div class="container">
         <img src="portfolio1.PNG" alt="Krishnaveer Singh" class="profile-img">
-        <h1>Krishnaveer Singh</h1>
+        <h1>Krishna Veer Singh</h1>
         <h2>Software Developer @ IBM | Java Specialist</h2>
 
         <h3>EDUCATION</h3>
@@ -182,6 +205,6 @@
             </div>
         </div>
     </div>
-    <div class="footer">&copy; 2025 Krishnaveer Singh | All Rights Reserved</div>
+    <div class="footer">&copy; 2025 Krishna veer Singh | All Rights Reserved</div> 
 </body>
 </html>
