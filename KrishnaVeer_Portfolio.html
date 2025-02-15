@@ -21,10 +21,6 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        .container:hover {
-            transform: scale(1.02);
         }
         .profile-img {
             width: 150px;
@@ -35,54 +31,56 @@
         h1 {
             color: #2c3e50;
         }
-        .section-title {
-            margin-top: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #2c3e50;
-        }
         .timeline {
-            text-align: left;
-            margin-top: 20px;
-            padding: 20px;
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #4caf50;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
         }
         .timeline-item {
-            background: #e3f2fd;
-            padding: 15px;
-            border-left: 5px solid #2196f3;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            transition: background 0.3s;
+            padding: 10px;
+            position: relative;
+            width: 50%;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            margin-bottom: 20px;
         }
-        .timeline-item:hover {
-            background: #bbdefb;
+        .timeline-item.left {
+            left: 0;
         }
-        .icon {
-            margin-right: 10px;
-            color: #2196f3;
+        .timeline-item.right {
+            left: 50%;
+        }
+        .timeline-item::before {
+            content: '\25BC';
+            position: absolute;
+            top: 10px;
+            font-size: 18px;
+            color: #4caf50;
+        }
+        .timeline-item.left::before {
+            right: -10px;
+        }
+        .timeline-item.right::before {
+            left: -10px;
         }
         .footer {
             margin-top: 20px;
             font-size: 14px;
             color: gray;
         }
-        .hidden-details {
-            display: none;
-            font-size: 14px;
-            color: #555;
-            margin-top: 5px;
-        }
     </style>
-    <script>
-        $(document).ready(function(){
-            $(".timeline-item").click(function(){
-                $(this).find(".hidden-details").slideToggle();
-            });
-        });
-    </script>
 </head>
 <body>
     <div class="container">
@@ -90,36 +88,26 @@
         <h1>Krishnaveer Singh</h1>
         <h3>Software Developer @ IBM | Java Specialist</h3>
         
-        <div class="section-title">Education</div>
         <div class="timeline">
-            <div class="timeline-item">
-                <span><i class="fas fa-calendar-alt icon"></i> <strong>2022 - Present:</strong> M.Tech at DA-IICT (CPI: 8.59)</span>
-                <span><i class="fas fa-map-marker-alt icon"></i> Gandhinagar, Gujarat</span>
-                <div class="hidden-details">Pursuing Information and Communication Technology with a focus on advanced computing.</div>
+            <div class="timeline-item left">
+                <strong>2022 - Present</strong> <br> M.Tech at DA-IICT (CPI: 8.59) <br>
+                <i class="fas fa-map-marker-alt"></i> Gandhinagar, Gujarat
             </div>
-            <div class="timeline-item">
-                <span><i class="fas fa-calendar-alt icon"></i> <strong>2017 - 2021:</strong> B.Tech from Bennett University (CPI: 7.1)</span>
-                <span><i class="fas fa-map-marker-alt icon"></i> Greater Noida, Uttar Pradesh</span>
-                <div class="hidden-details">Studied Computer Science and Engineering, specializing in software development.</div>
+            <div class="timeline-item right">
+                <strong>2017 - 2021</strong> <br> B.Tech from Bennett University (CPI: 7.1) <br>
+                <i class="fas fa-map-marker-alt"></i> Greater Noida, Uttar Pradesh
             </div>
-            <div class="timeline-item">
-                <span><i class="fas fa-calendar-alt icon"></i> <strong>2015 - 2016:</strong> Class XII - Maria Residential Public School (CBSE) (76%)</span>
-                <span><i class="fas fa-map-marker-alt icon"></i> Agra, Uttar Pradesh</span>
-                <div class="hidden-details">Completed Class XII with a focus on Science stream.</div>
+            <div class="timeline-item left">
+                <strong>2015 - 2016</strong> <br> Class XII - Maria Residential Public School (CBSE) (76%) <br>
+                <i class="fas fa-map-marker-alt"></i> Agra, Uttar Pradesh
             </div>
-            <div class="timeline-item">
-                <span><i class="fas fa-calendar-alt icon"></i> <strong>2013 - 2014:</strong> Class X - Ragrenda Swarup Public School (ICSE) (82.4%)</span>
-                <span><i class="fas fa-map-marker-alt icon"></i> Agra, Uttar Pradesh</span>
-                <div class="hidden-details">Completed Class X with distinction.</div>
+            <div class="timeline-item right">
+                <strong>2013 - 2014</strong> <br> Class X - Ragrenda Swarup Public School (ICSE) (82.4%) <br>
+                <i class="fas fa-map-marker-alt"></i> Agra, Uttar Pradesh
             </div>
-        </div>
-        
-        <div class="section-title">Experience</div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <span><i class="fas fa-calendar-alt icon"></i> <strong>2024 - Present:</strong> Software Developer at IBM</span>
-                <span><i class="fas fa-map-marker-alt icon"></i> India</span>
-                <div class="hidden-details">Developing enterprise-grade Java applications and working with cloud technologies.</div>
+            <div class="timeline-item left">
+                <strong>2024 - Present</strong> <br> Software Developer at IBM <br>
+                <i class="fas fa-map-marker-alt"></i> India
             </div>
         </div>
     </div>
