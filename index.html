@@ -129,14 +129,25 @@
         }
 
         /* Specific company icons */
-        .ibm:before { background-image: url('https://github.com/KrishnaVeer7712/Portfolio/blob/main/images/ibm-logo-2.png');
+        .ibm:before {
+            background-image: url('https://raw.githubusercontent.com/KrishnaVeer7712/Portfolio/main/images/ibm-logo-2.png');
             background-size: cover;
             width: 40px;
-            height: 40px; }
-        .disecto:before { background-image: url('https://github.com/KrishnaVeer7712/Portfolio/blob/main/images/disecto_logo.jpg');
+            height: 40px;
+            content: '';
+            display: inline-block;
+            margin-right: 10px; /* Add some space between the logo and text */
+        }
+        
+        .disecto:before {
+            background-image: url('https://raw.githubusercontent.com/KrishnaVeer7712/Portfolio/main/images/disecto_logo.jpg');
             background-size: cover;
             width: 40px;
-            height: 40px; }
+            height: 40px;
+            content: '';
+            display: inline-block;
+            margin-right: 10px;
+        }
         .jpmorgan:before { content: '\f19c'; font-family: "Font Awesome 5 Brands"; }
         .here:before { content: 'H'; font-family: Arial, sans-serif; }
         .leadingai:before { content: 'A'; font-family: Arial, sans-serif; }
