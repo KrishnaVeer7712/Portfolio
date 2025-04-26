@@ -70,7 +70,12 @@
             top: 0;
             bottom: 0;
             left: 10px;
+            animation: growLine 3s ease-out forwards;
             border-radius: 2px;
+        }
+        @keyframes growLine {
+            from { height: 0; }
+            to { height: 100%; }
         }
         .timeline-item {
             padding: 25px 25px 25px 80px;
