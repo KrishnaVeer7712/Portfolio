@@ -425,8 +425,9 @@
                 $(this).find(".details").slideToggle();
             });
         });
+    </script>
 
-
+    <script>
 	function openCertificatePopup() {
 	    document.getElementById('certificatePopup').style.display = 'block';
 	}
@@ -434,9 +435,8 @@
 	function closeCertificatePopup() {
 	    document.getElementById('certificatePopup').style.display = 'none';
 	}
-
-
     </script>
+
 </head>
 <body>
     <div class="container">
@@ -635,15 +635,7 @@
 		<div id="certificatePopup" class="certificate-popup">
 		    <div class="certificate-popup-content">
 		        <button class="close-popup-btn" onclick="closeCertificatePopup()">&times;</button>
-		        <img src="https://raw.githubusercontent.com/KrishnaVeer7712/Portfolio/main/images/certificate_NIT_Kurukshetra_System_Engineering.pdf" alt="Certificate">
-		    </div>
-		</div>
-		
-		<!-- Modal Structure for Certificate Image -->
-		<div id="certificateModal" class="certificate-modal">
-		    <div class="certificate-modal-content">
-		        <span class="close">&times;</span>
-		        <img class="certificate-modal-img" src="https://raw.githubusercontent.com/KrishnaVeer7712/Portfolio/main/images/certificate_NIT_Kurukshetra_System_Engineering.pdf" alt="Certificate">
+		        <iframe src="path_to_your_certificate.pdf" width="100%" height="500px" style="border-radius: 8px; border: none;"></iframe>
 		    </div>
 		</div>
 
