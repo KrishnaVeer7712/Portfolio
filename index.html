@@ -256,21 +256,30 @@
 	    width: 80%;
 	    max-width: 500px;
 	}	
-	.certificate-modal-img {
-	    width: 100%; /* Make image fit within the modal */
+	.certificate-popup-content {
+	    background-color: #fff;
+	    margin: 10% auto;
+	    padding: 20px;
+	    border-radius: 12px;
+	    width: 80%;
+	    max-width: 600px;
+	    text-align: center;
+	    position: relative;
+	}
+	
+	.certificate-popup-content img {
+	    width: 100%;
 	    height: auto;
-	}	
-	.close {
-	    color: #aaa;
-	    float: right;
-	    font-size: 28px;
-	    font-weight: bold;
-	    cursor: pointer;
-	}	
-	.close:hover,
-	.close:focus {
-	    color: black;
-	    text-decoration: none;
+	    border-radius: 8px;
+	}
+	
+	.close-popup-btn {
+	    position: absolute;
+	    top: 10px;
+	    right: 15px;
+	    background: transparent;
+	    border: none;
+	    font-size: 24px;
 	    cursor: pointer;
 	}
 	
@@ -418,29 +427,14 @@
         });
 
 
-	$(document).ready(function(){
-	    // Modal functionality
-	    var modal = document.getElementById("certificateModal");
-	    var btn = document.querySelector(".show-publication-btn");
-	    var span = document.querySelector(".close");
+	function openCertificatePopup() {
+	    document.getElementById('certificatePopup').style.display = 'block';
+	}
 	
-	    // When the user clicks the button, open the modal
-	    btn.onclick = function() {
-	        modal.style.display = "block";
-	    }
-	
-	    // When the user clicks on <span> (x), close the modal
-	    span.onclick = function() {
-	        modal.style.display = "none";
-	    }
-	
-	    // When the user clicks anywhere outside the modal, close it
-	    window.onclick = function(event) {
-	        if (event.target == modal) {
-	            modal.style.display = "none";
-	        }
-	    }
-	});
+	function closeCertificatePopup() {
+	    document.getElementById('certificatePopup').style.display = 'none';
+	}
+
 
     </script>
 </head>
@@ -634,11 +628,15 @@
                 <h4>"<b>Systems Engineering</b>" (4th– 8th November, 2020) conducted by National Institute of Technology, Kurukshetra, India.</h4>
 		<!-- Show Certificate Button -->
 		<div class="show-cert-container">
-		    <a href="https://raw.githubusercontent.com/KrishnaVeer7712/Portfolio/main/images/certificate_NIT_Kurukshetra_System_Engineering.pdf" target="_blank" class="show-publication-btn">
-		        <button>
-		            Show Certificate <i class="fas fa-external-link-alt"></i>
-		        </button>
-		    </a>
+		    <button class="show-cert-btn" onclick="openCertificatePopup()">Show Certificate</button>
+		</div>
+		
+		<!-- Popup window -->
+		<div id="certificatePopup" class="certificate-popup">
+		    <div class="certificate-popup-content">
+		        <button class="close-popup-btn" onclick="closeCertificatePopup()">&times;</button>
+		        <img src="https://raw.githubusercontent.com/KrishnaVeer7712/Portfolio/main/images/certificate_NIT_Kurukshetra_System_Engineering.pdf" alt="Certificate">
+		    </div>
 		</div>
 		
 		<!-- Modal Structure for Certificate Image -->
